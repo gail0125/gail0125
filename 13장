@@ -187,8 +187,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         lblRecordTime.text = convertNSTimeInterval2String(audioRecorder.currentTime)
     }
     
-}
 
+}
 
 
 
