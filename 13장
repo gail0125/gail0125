@@ -1,4 +1,31 @@
-var isRecordMode = false
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
+    
+    var audioPlayer : AVAudioPlayer!
+    var audioFile : URL!
+    
+    let MAX_VOLUME : Float = 10.0
+    
+    var progressTimer : Timer!
+    
+    let timePlayerSelector:Selector = #selector(ViewController.updatePlayTime)
+    let timeRecordSelector:Selector = #selector(ViewController.updateRecordTime)
+
+    @IBOutlet var pvProgressPlay: UIProgressView!
+    @IBOutlet var lblCurrentTime: UILabel!
+    @IBOutlet var lblEndTime: UILabel!
+    @IBOutlet var btnPlay: UIButton!
+    @IBOutlet var btnPause: UIButton!
+    @IBOutlet var btnStop: UIButton!
+    @IBOutlet var slVolume: UISlider!
+    
+    @IBOutlet var btnRecord: UIButton!
+    @IBOutlet var lblRecordTime: UILabel!
+    
+    var audioRecorder : AVAudioRecorder!
+    var isRecordMode = false
     
     
     override func viewDidLoad() {
@@ -161,3 +188,20 @@ var isRecordMode = false
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
